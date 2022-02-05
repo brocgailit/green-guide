@@ -1,0 +1,18 @@
+// Use flex to keep the footer at the bottom.
+body,
+[data-apos-refreshable],
+.bp-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+[data-apos-refreshable],
+.bp-wrapper,
+main {
+  flex-grow: 1;
+}
+
+body {
+  min-height: 100vh;
+  font-family: $font-family-sans-serif;
+}

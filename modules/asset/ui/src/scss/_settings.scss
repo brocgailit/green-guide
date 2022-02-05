@@ -1,0 +1,78 @@
+// https://meyerweb.com/eric/tools/color-blend/#:::hex
+$white:  #FFFFFF;
+$gray-100: #F0F2E9;
+$gray-200: #D3D9C3;
+$gray-300: #BAC0AB;
+$gray-400: #A1A792;
+$gray-500: #898F7A;
+$gray-600: #707661;
+$gray-700: #575D48;
+$gray-800: #3E4430;
+$gray-900: #252B17;
+$black:  #080605;
+
+$grays: (
+  100: $gray-100,
+  200: $gray-200,
+  300: $gray-300,
+  400: $gray-400,
+  500: $gray-500,
+  600: $gray-600,
+  700: $gray-700,
+  800: $gray-800,
+  900: $gray-900
+);
+
+$blue:    #25A9A9;
+$indigo:  #043E53;
+$purple:  #672e9b;
+$pink:    #dd6881;
+$red:     #D45C18;
+$orange:  #C9781C;
+$yellow:  #ECCE2D;
+$green:   #98C13F;
+$forest:  #006837;
+$teal:    #20c997;
+$cyan:    #17a2b8;
+
+$colors: (
+  blue: $blue,
+  indigo: $indigo,
+  purple: $purple,
+  pink: $pink,
+  red: $red,
+  orange: $orange,
+  yellow: $yellow,
+  green: $green,
+  forest: $forest,
+  teal: $teal,
+  cyan: $cyan,
+  white: $white,
+  gray: $gray-100,
+  gray-dark: $gray-900
+);
+
+$primary:       $green;
+$secondary:     $yellow;
+$success:       $forest;
+$info:          $blue;
+$warning:       $orange;
+$danger:        $red;
+$light:         $gray-100;
+$dark:          $forest;
+
+$theme-colors: (
+  primary: $primary,
+  secondary: $secondary,
+  success: $forest,
+  info: $blue,
+  warning: $orange,
+  danger: $red,
+  light: $gray-100,
+  dark: $forest
+);
+
+$font-family-sans-serif: "Josefin Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$font-family-monospace:  "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+$font-family-base:       $font-family-sans-serif;
+$font-family-stylized: "Passion One", $font-family-sans-serif;
