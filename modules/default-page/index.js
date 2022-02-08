@@ -5,11 +5,6 @@ module.exports = {
   },
   fields: {
     add: {
-      description: {
-        label: 'SEO Description',
-        type: 'string',
-        required: true
-      },
       main: {
         type: 'area',
         options: {
@@ -52,7 +47,6 @@ module.exports = {
         label: 'Basics',
         fields: [
           'title',
-          'description',
           'main'
         ]
       }
