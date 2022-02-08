@@ -1,8 +1,5 @@
 @import url('~normalize.css');
 
-@import './scss/_settings';
-@import './scss/_layout';
-
-.gg-rich-text {
-  // transform: scale(0.5);
-}
+@import './scss/properties';
+@import './scss/layout';
+@import './scss/typography';

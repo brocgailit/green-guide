@@ -1,0 +1,28 @@
+h1, h2, h3, h4, h5, p {
+  line-height: 1;
+  margin: 0;
+}
+
+h1, h2, h3 {
+  font-weight: bold;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-family: var(--gg-font-heading);
+  font-size: var(--gg-size-xl);
+  line-height: 0.8;
+}
+
+h2 {
+  font-size: var(--gg-size-lg);
+}
+
+h3 {
+  font-size: var(--gg-size-md);
+}
+
+p {
+  font-size: var(--gg-size-sm);
+  line-height: 1.5;
+}

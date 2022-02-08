@@ -1,0 +1,52 @@
+:root {
+
+  /* Colors */
+  --gg-color-white: #FFFFFF;
+  --gg-color-grey-1: #F0F2E9;
+  --gg-color-grey-2: #D3D9C3;
+  --gg-color-grey-3: #BAC0AB;
+  --gg-color-grey-4: #A1A792;
+  --gg-color-grey-5: #898F7A;
+  --gg-color-grey-6: #707661;
+  --gg-color-grey-7: #575D48;
+  --gg-color-grey-8: #3E4430;
+  --gg-color-grey-9: #252B17;
+  --gg-color-black: #080605;
+
+  --gg-color-terpine: #98C13F;
+  --gg-color-clarity: #25a9a9;
+  --gg-color-venture: #006837;
+  --gg-color-smoke: var(--gg-color-grey-1);
+
+  --gg-color-danger: #D45C18;
+
+  /* Fonts */
+  --gg-font-base: "Josefin Sans", sans-serif;
+  --gg-font-heading: "Passion One", sans-serif;
+
+  /* Sizes */
+  --gg-gap: 8px;
+  --gg-gap-sm: 4px;
+
+  --gg-size-xs: 0.75rem;
+  --gg-size-sm: calc(var(--gg-size-xs) * 1.33);
+  --gg-size-md: calc(var(--gg-size-sm) * 1.33);
+  --gg-size-lg: calc(var(--gg-size-md) * 1.33);
+  --gg-size-xl: calc(var(--gg-size-lg) * 2);
+
+  --gg-container-width-xs: 250px;
+  --gg-container-width-sm: 500px;
+  --gg-container-width-md: 800px;
+  --gg-container-width-lg: 1200px;
+  --gg-container-width-xl: 1600px;
+
+
+  @media only screen and (max-width: 600px) {
+    --gg-size-xs: 0.66rem;
+  }
+
+  @media only screen and (min-width: 1200px) {
+    --gg-size-xs: 1rem;
+  }
+
+}
