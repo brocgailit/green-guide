@@ -1,11 +1,81 @@
 {% extends "layout.html" %}
 
+{% import 'fragments/xola-buttons.html' as buttons %}
+
+{% block extraHead %}
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TouristInformationCenter",
+    "image": [
+      "https://example.com/photos/1x1/photo.jpg",
+      "https://example.com/photos/4x3/photo.jpg",
+      "https://example.com/photos/16x9/photo.jpg"
+      ],
+    "name": "{{ data.global.organization }}",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "{{ data.global.streetAddress }}",
+      "addressLocality": "{{ data.global.addressLocality }}",
+      "addressRegion": "{{ data.global.addressRegion }}",
+      "postalCode": "{{ data.global.postalCode }}",
+      "addressCountry": "{{ data.global.addressCountry }}"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 37.777503,
+      "longitude": -122.433469
+    },
+    "url": "https://greenguide.tours",
+    "telephone": "{{ data.global.phone }}",
+    "priceRange": "$$$",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Sunday",
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "opens": "09:00",
+        "closes": "22:00"
+      }
+    ],
+    "acceptsReservations": "True"
+  }
+  </script>
+{% endblock %}
+
 {% block main %}
-  <section class="gg-hero-fullscreen">
+
+  {% if data.page.hero|length %}
+
+    {% set heroBackgroundObject = apos.attachment.first(data.page._heroBackground) %}
+    {% set heroBackground = apos.attachment.url(heroBackgroundObject, { size: 'max' }) %}
+
+    <section class="hero" style="--gg-hero-bg: url('{{ heroBackground }}')">
+      {% area data.page, 'hero' %}
+    </section>
+
+  {% endif %}
+
+  <section>
     <div>
-      <h1>Green Guide Tours</h1>
-      <h2>Fun educational cannabis tours &amp; experiences</h2>
       {% area data.page, 'main' %}
     </div>
   </section>
+
+  <footer class="page-footer">
+    <div class="page-footer--area container">
+      {% area data.page, 'footer' %}
+    </div>
+    <div class="page-footer--attribution">
+      © {{ apos.global.currentYear() }} {{ data.global.organization }}. All rights reserved.
+    </div>
+  </footer>
+
 {% endblock %}

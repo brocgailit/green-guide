@@ -1,0 +1,48 @@
+[data-reviews-widget] {
+  background-color: var(--gg-color-vapor);
+}
+
+.reviews,
+.reviews--platform,
+.reviews--platform a,
+.reviews--container {
+  display: flex;
+}
+
+.reviews--platform,
+.reviews--platform a,
+.reviews--container {
+  flex-direction: column;
+}
+
+.reviews {
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.reviews,
+.reviews--container {
+  gap: var(--gg-size-sm);
+}
+
+.reviews--heading {
+  color: var(--gg-color-grey-7);
+  text-align: center;
+}
+
+.reviews--platform {
+  align-items: center;
+  gap: var(--gg-gap);
+}
+
+.reviews--platform a {
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.reviews--platform--logo {
+  max-width: 250px;
+  max-height: 75px;
+}

@@ -1,5 +1,6 @@
 body,
-[data-apos-refreshable] {
+[data-apos-refreshable],
+main {
   display: flex;
   flex-direction: column;
 }
@@ -12,11 +13,17 @@ main {
 body {
   min-height: 100vh;
   font-family: var(--gg-font-base);
-  color: var(--gg-color-black);
+  color: var(--gg-color-resin);
+  background-color: var(--gg-color-smoke);
+}
+
+.container {
+  margin: 0 auto;
+  max-width: var(--gg-container-width-lg);
 }
 
 .gg-gradient {
-  background: linear-gradient(45deg, var(--gg-color-clarity), var(--gg-color-terpine), var(--gg-color-venture));
+  background: linear-gradient(45deg, var(--gg-color-clarity), var(--gg-color-shatter), var(--gg-color-terpine), var(--gg-color-venture));
 	background-size: 400% 400%;
 	animation: gradientAnimation 15s ease infinite;
 }
@@ -28,13 +35,17 @@ body {
 }
 
 .gg-hero-fullscreen {
-  position: relative;
+  position: absolute;
+  z-index: var(--gg-really-high);
   @extend .gg-column-layout;
   padding: var(--gg-size-sm);
   color: var(--gg-color-white);
   align-items: center;
   justify-content: center;
   height: 100vh;
+  top: 0;
+  left: 0;
+  width: 100%;
   box-sizing: border-box;
 
   &:before, &:after {
@@ -65,6 +76,132 @@ body {
 
 .gg-rich-text {
   @extend .gg-column-layout;
+}
+
+.button {
+  --gg-button-size: var(--gg-size-md);
+  z-index: var(--gg-lucid);
+  position: relative;
+  background-color: transparent;
+  height: calc(var(--gg-button-size) * 1.666);
+  font-family: var(--gg-font-script);
+  font-size: var(--gg-button-size);
+  padding: 0 var(--gg-button-size);
+  font-weight: normal;
+  border: none;
+  outline: none;
+  color: var(--gg-color-white);
+  cursor: pointer;
+
+  &, &::before {
+    transition: var(--gg-transition-default);
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: var(--gg-faded);
+    border-radius: var(--gg-radius);
+    background-color: var(--gg-button-color, var(--gg-color-terpine));
+    box-shadow: var(--gg-shadow-heavy);
+    border-radius: calc(var(--gg-really-high) * 1px);
+  }
+
+  &:hover {
+    &::before {
+      filter: brightness(1.1);
+      box-shadow: var(--gg-shadow-light);
+    }
+  }
+}
+
+.hero {
+  --gg-hero-color: var(--gg-color-venture);
+  --gg-hero-bg: url('http://localhost:3000/uploads/attachments/ckzox0bn1002qf5k6z48s8dey-4.one-third.jpg');
+  
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gg-size-md);
+  justify-content: center;
+  padding: var(--gg-size-md);
+  min-height: 500px;
+  color: var(--gg-color-vapor);
+  text-shadow: 1px 2px 6px rgba(0,0,0,0.33);
+
+  &:before, &:after {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &:before {
+    background-image: var(--gg-hero-bg);
+    background-size: cover;
+    background-position: center;
+  }
+
+  &:after {
+    opacity: 0.6;
+    background-color: var(--gg-hero-color);
+    // @extend .gg-gradient;
+  }
+
+  > div {
+    text-align: left;
+    width: 100%;
+    max-width: var(--gg-container-width-lg);
+
+    * {
+      max-width: var(--gg-container-width-sm);
+    }
+
+    p {
+      font-size: var(--gg-size-sm);
+      &:not(:first-child) {
+        margin-top: var(--gg-size-md);
+      }
+    }
+
+    h2 {
+      font-size: var(--gg-size-md);
+    }
+
+    h3 {
+      font-size: var(--gg-size-sm);
+      line-height: var(--gg-size-md);
+    }
+  }
+
+
+  @media only screen and (max-width: 600px) {
+    min-height: auto;
+    padding: var(--gg-size-md) var(--gg-size-xs);
+    h1 {
+      font-size: var(--gg-size-lg);
+    }
+    > div {
+      text-align: center;
+    }
+  }
+}
+
+.padded-widget {
+  padding: var(--gg-size-lg);
+
+  @media only screen and (max-width: 600px) {
+    padding: var(--gg-size-md) var(--gg-gap);
+  }
+
 }
 
 @keyframes gradientAnimation {

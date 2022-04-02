@@ -1,0 +1,10 @@
+[data-two-column-widget] {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gg-size-md);
+
+  @media only screen and (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+  }
+}

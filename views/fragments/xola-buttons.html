@@ -1,0 +1,13 @@
+{% fragment experience(id, label, color) %}
+  <div class="xola-checkout xola-custom" data-seller="5980ecb1e017980a598b45d9" data-experience="{{ id }}" data-version="2">
+    <button class="button" style="--gg-button-color: var(--gg-color-{{ color }})">{{ label }}</button>
+  </div>
+{% endfragment %}
+
+{% fragment multiItemCheckout(id, label, color, size) %}
+<div class="xola-checkout xola-custom" data-button-id="{{ id }}">
+  <button class="button" style="--gg-button-size: var(--gg-size-{{ size }}); --gg-button-color: var(--gg-color-{{ color }})">
+    {{ label }}
+  </button>
+</div>
+{% endfragment %}

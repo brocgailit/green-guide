@@ -1,0 +1,5 @@
+{% import 'fragments/xola-buttons.html' as buttons %}
+
+<section data-multi-item-button-widget>
+  {% render buttons.multiItemCheckout(data.widget.xolaId, data.widget.label, data.widget.color, data.widget.size) %}
+</section>

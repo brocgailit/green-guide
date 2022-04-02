@@ -16,37 +16,59 @@
   --gg-color-terpine: #98C13F;
   --gg-color-clarity: #25a9a9;
   --gg-color-venture: #006837;
+  --gg-color-shatter: #fae32d;
+  --gg-color-vapor: var(--gg-color-white);
   --gg-color-smoke: var(--gg-color-grey-1);
+  --gg-color-resin: var(--gg-color-black);
 
   --gg-color-danger: #D45C18;
 
   /* Fonts */
-  --gg-font-base: "Josefin Sans", sans-serif;
-  --gg-font-heading: "Passion One", sans-serif;
+  --gg-font-base: "Nunito Sans", sans-serif;
+  --gg-font-heading: "Jost", sans-serif;
+  --gg-font-script: "Yellowtail", cursive;
+  --gg-font-weight-normal: 400;
+  --gg-font-weight-light: 300;
+  --gg-font-weight-bold: 600;
+  --gg-font-weight-extra-bold: 700;
 
   /* Sizes */
-  --gg-gap: 8px;
+  --gg-gap: 7px;
   --gg-gap-sm: 4px;
+  --gg-gap-lg: 12px;
 
-  --gg-size-xs: 0.75rem;
-  --gg-size-sm: calc(var(--gg-size-xs) * 1.33);
-  --gg-size-md: calc(var(--gg-size-sm) * 1.33);
-  --gg-size-lg: calc(var(--gg-size-md) * 1.33);
-  --gg-size-xl: calc(var(--gg-size-lg) * 2);
+  --gg-size-xs: 0.8rem;
+  --gg-size-sm: 1rem;
+  --gg-size-md: calc(var(--gg-size-sm) * 1.6);
+  --gg-size-lg: calc(var(--gg-size-md) * 1.6);
+  --gg-size-xl: calc(var(--gg-size-lg) * 1.6);
 
+  /* Containers */
   --gg-container-width-xs: 250px;
-  --gg-container-width-sm: 500px;
+  --gg-container-width-sm: 600px;
   --gg-container-width-md: 800px;
   --gg-container-width-lg: 1200px;
   --gg-container-width-xl: 1600px;
 
+  /* Border radius */
+  --gg-radius: 4px;
 
-  @media only screen and (max-width: 600px) {
-    --gg-size-xs: 0.66rem;
-  }
+  /* Box Shadow */
+  --gg-shadow-light: 1px 2px 10px rgba(0,0,0,0.075), 0 0 0 1px rgb(0, 0, 0, 0.03);
+  --gg-shadow-heavy: 3px 5px 15px rgba(0,0,0,0.1), 0 0 0 1px rgb(0, 0, 0, 0.03);
 
-  @media only screen and (min-width: 1200px) {
-    --gg-size-xs: 1rem;
-  }
+  /* Transitions */
+  --gg-transition-default: 250ms ease-in-out;
 
+  /* Magic Numbers */
+  --gg-really-high: 420;
+  --gg-buzzed: 10;
+  --gg-elevated: 1;
+  --gg-lucid: 0;
+  --gg-faded: -1;
+
+}
+
+.bg-terpine {
+  background-color: var(--gg-color-terpine); 
 }

@@ -1,0 +1,23 @@
+<section data-contact-info-widget>
+
+  <h3>{{ data.widget.heading }}</h3>
+
+  <address>
+    <span class="address--line">
+      <span class="address--organization">{{ data.global.organization }}</span>
+    </span>
+    <span class="address--line">
+      <span class="address--street">{{ data.global.streetAddress }}</span>
+    </span>
+    <span class="address--line">
+      <span class="address--locality">{{ data.global.addressLocality }}</span>
+      <span class="address--region">{{ data.global.addressRegion }}</span>
+      <span class="address--postal">{{ data.global.postalCode }}</span>
+    </span>
+  </address>
+  
+  <a class="phone underline" href="tel:{{ data.global.phone }}">
+    {{ apos.contactInfoWidget.formatPhone(data.global.phone)}}
+  </a>
+  
+</section>

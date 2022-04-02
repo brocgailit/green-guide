@@ -1,0 +1,35 @@
+{% import 'fragments/icons.html' as icons %}
+<section data-reviews-widget>
+  <div class="reviews--container padded-widget container">
+    <h3 class="reviews--heading">{{ data.widget.heading }}</h3>
+    <div class="reviews">
+
+      {% for platform in data.widget.platforms %}
+
+        <div class="reviews--platform">
+
+          {% set logoObject = apos.attachment.first(platform._logo) %}
+
+          <a href="{{ platform.url }}" target="_blank">
+            <img
+              class="reviews--platform--logo"
+              src="{{ apos.attachment.url(logoObject, { size: 'one-third' }) }}"
+              alt="{{ platform.name }} Logo"
+              title="{{ platform.name }}"
+            />
+          </a>
+
+          <div class="reviews--platform--rating" title="{{ platform.aggregateRating}} of {{ platform.ratingMax }} Stars">
+            {% for i in range(0, platform.ratingMax) -%}
+              {% set fillColor = "var(--gg-color-terpine)" if (platform.aggregateRating > i) else "var(--gg-color-grey-3)" %}
+              {% render icons.leaf('40px', fillColor) %}
+            {%- endfor %}
+          </div>
+
+        </div>
+
+      {% endfor %}
+
+    </div>
+  </div>
+</section>

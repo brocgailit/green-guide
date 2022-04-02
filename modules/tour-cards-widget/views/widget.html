@@ -1,0 +1,42 @@
+{% import 'fragments/xola-buttons.html' as buttons %}
+<section data-tour-cards-widget class="padded-widget container">
+    <header>
+      <h3 class="h2">{{ data.widget.heading }}</h3>
+      <h4 class="h3">{{ data.widget.subheading }}</h4>
+      
+      <div class="tour-cards--details">
+        {% area data.widget, 'details' %}
+      </div>
+    </header>
+    <div class="tour-card--container">
+      {% for tour in data.widget._tours %}
+      {% set imageObject = apos.attachment.first(tour._images) %}
+        <div class="tour-card">
+          <img
+            class="tour-card--image"
+            src="{{ apos.attachment.url(imageObject, { size: 'one-third' }) }}"
+            alt="stuff"
+          />
+          <div class="tour-card--content">
+            <div class="tour-card--header">
+              <h3>{{ tour.title }}</h3>
+              <span>From {{ apos.tour.formatPrice(tour)}}</span>
+            </div>
+            <div class="tour-card--description">
+              <p>
+                {{ tour.description }}
+              </p>
+            </div>
+            <ul class="tour-card--features">
+              {% for feature in tour.features %}
+                <li>{{ feature.label }}</li>
+              {% endfor %}
+            </ul>
+            <div class="tour-card--footer">
+              {% render buttons.experience(tour.xolaId, 'Book Now!', tour.ctaColor) %}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+</section>

@@ -3,26 +3,81 @@ h1, h2, h3, h4, h5, p {
   margin: 0;
 }
 
-h1, h2, h3 {
-  font-weight: bold;
-}
-
-h1 {
-  text-transform: uppercase;
+h1, h2, h3,
+.h1, .h2, .h3 {
   font-family: var(--gg-font-heading);
-  font-size: var(--gg-size-xl);
-  line-height: 0.8;
+  font-weight: var(--gg-font-weight-bold);
 }
 
-h2 {
+h1, .h1 {
+  text-transform: uppercase;
+  font-size: var(--gg-size-xl);
+  font-weight: var(--gg-font-weight-extra-bold);
+}
+
+h2, .h2 {
   font-size: var(--gg-size-lg);
 }
 
-h3 {
+h3, .h3 {
   font-size: var(--gg-size-md);
+}
+
+h4, .h4 {
+  font-size: var(--gg-size-sm);
+  font-weight: var(--gg-font-weight-bold);
 }
 
 p {
   font-size: var(--gg-size-sm);
+  font-weight: var(--gg-font-weight-light);
   line-height: 1.5;
+}
+
+a {
+  color: var(--gg-color-clarity);
+  text-decoration: none;
+  font-weight: var(--gg-font-weight-bold);
+  display: inline-block;
+  position: relative;
+
+  &.underline:after {
+    content: '';
+    background-color: var(--gg-color-shatter);
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: calc(var(--gg-gap) / 2);
+    top: 100%;
+    transform: scaleX(0);
+    transform-origin: center left;
+    transition: var(--gg-transition-default);
+  }
+
+  &.underline:hover:after {
+    transform: scaleX(1);
+  }
+}
+
+.font-script {
+  font-family: var(--gg-font-script);
+  font-weight: normal;
+}
+
+@media only screen and (max-width: 600px) {
+  h1, .h1 {
+    font-size: var(--gg-size-lg);
+  }
+
+  h2, .h2 {
+    font-size: var(--gg-size-md);
+  }
+
+  h3, .h3 {
+    font-size: var(--gg-size-sm);
+  }
+
+  h4, .h4 {
+    font-size: var(--gg-size-xs);
+  }
 }

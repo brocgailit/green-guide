@@ -1,0 +1,20 @@
+.news {
+  background-color: var(--gg-color-vapor);
+}
+
+.news .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: var(--gg-size-sm) var(--gg-size-lg);
+}
+
+.news--link {
+  text-decoration: none;
+  display: inline-block;
+}
+
+.news--image {
+  max-height: 50px;
+}

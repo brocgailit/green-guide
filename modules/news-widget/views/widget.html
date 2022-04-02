@@ -1,0 +1,19 @@
+<section data-news-widget class="news padded-widget">
+  <div class="container">
+    {% for source in data.widget.sources %}
+      {% set imageObject = apos.attachment.first(source._logo) %}
+      <a
+        class="news--link"
+        href="{{ source.url }}"
+        title="{{source.name}} - {{ source.headline}}"
+        target="_blank"
+      >
+        <img
+          class="news--image"
+          src="{{ apos.attachment.url(imageObject, { size: 'one-sixth' }) }}"
+          alt="{{ source.name }} Logo"
+        />
+      </a>
+    {% endfor %}
+  </div>
+</section>

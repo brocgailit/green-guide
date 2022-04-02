@@ -1,24 +1,61 @@
 {# Automatically extends the right outer layout and also handles AJAX siutations #}
 {% extends data.outerLayout %}
 
+{% import 'fragments/xola-buttons.html' as buttons %}
+
 {% set title = data.piece.title or data.page.title %}
 {% block title %}
-  {{ title }}
+  {{ title }} - {{ data.global.organization }}
   {% if not title %}
     {{ apos.log('Looks like you forgot to override the title block in a template that does not have access to an Apostrophe page or piece.') }}
   {% endif %}
 {% endblock %}
 
-{% block extraHead %}
+{% block standardHead %}
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&family=Passion+One:wght@700&display=swap" rel="stylesheet"
+  <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,600;0,700;1,700&family=Nunito+Sans:wght@300;400&family=Yellowtail&display=swap" rel="stylesheet">
+  <script type="text/javascript"> (function() { var co=document.createElement("script"); co.type="text/javascript"; co.async=true; co.src="https://xola.com/checkout.js"; var s=document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(co, s); })(); </script>
 {% endblock %}
 
 {% block beforeMain %}
 <div>
-  <header>
-    <nav></nav>
+  <header class="navigation">
+    <nav>
+
+      <a href="/" class="navigation--brand">
+        <img
+          class="navigation--logo"
+          src="/images/green-guide-tours--logo-sm.svg"
+          alt="Green Guide Marijuana Tours Logo"
+        >
+        <div class="navigation--brand-name">
+          <span>Green Guide</span>
+          <span>Marijuana Tours</span>
+        </div>
+      </a>
+
+      {% if data.home._children|length %}
+        <label class="menu">
+          <input type="checkbox" class="toggle">
+          <span class="bread">
+            <span class="meat"></span>
+          </span>
+          <ul>
+            {% for page in data.home._children %}
+              <li>
+                <a href="{{ page._url }}" class="navigation--item">{{ page.navigationLabel if page.navigationLabel else page.title }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </label>
+      {% endif %}
+
+      <div class="navigation--cta">
+        {% render buttons.multiItemCheckout(data.global.ctaXolaId, data.global.ctaLabel, data.global.ctaColor, 'lg') %}
+      </div>
+    </nav>
   </header>
   <main>
 {% endblock %}

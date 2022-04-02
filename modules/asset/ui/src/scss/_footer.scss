@@ -1,0 +1,19 @@
+.page-footer {
+  color: var(--gg-color-smoke);
+  background-color: var(--gg-color-resin);
+}
+
+.page-footer--area {
+  padding: var(--gg-size-lg) var(--gg-size-sm);
+
+  .apos-area {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gg-size-lg);
+  }
+}
+
+.page-footer--attribution {
+  text-align: center;
+  padding: var(--gg-size-md) 0 var(--gg-size-xl);
+}

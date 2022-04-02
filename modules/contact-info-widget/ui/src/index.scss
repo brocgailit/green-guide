@@ -1,0 +1,20 @@
+[data-contact-info-widget] {
+  h3 {
+    font-family: var(--gg-font-heading);
+    margin-bottom: var(--gg-size-xs);
+  }
+
+  * {
+    font-family: var(--gg-font-base);
+    font-style: normal;
+    line-height: 1.5;
+  }
+}
+
+.address--line {
+  display: block;
+}
+
+.address--organization {
+  font-weight: var(--gg-font-weight-bold);
+}

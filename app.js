@@ -1,5 +1,6 @@
 require('apostrophe')({
   shortName: 'green-guide',
+  // baseUrl: 'http://localhost:3000/',
   modules: {
     // Apostrophe module configuration
     // *******************************
@@ -26,10 +27,22 @@ require('apostrophe')({
         className: 'gg-video-widget'
       }
     },
+    // '@apostrophecms/seo': {},
     // `asset` supports the project's webpack build for client-side assets.
     asset: {},
     // The project's first custom page type.
     'default-page': {},
-    'coming-soon-page': {}
+    'coming-soon-page': {},
+    tour: {
+      options: {
+        sellerId: '5980ecb1e017980a598b45d9'
+      }
+    },
+    'tour-cards-widget': {},
+    'reviews-widget': {},
+    'news-widget': {},
+    'two-column-widget': {},
+    'multi-item-button-widget': {},
+    'contact-info-widget': {}
   }
 });
