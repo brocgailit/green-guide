@@ -43,6 +43,7 @@ require('apostrophe')({
     'news-widget': {},
     'two-column-widget': {},
     'multi-item-button-widget': {},
-    'contact-info-widget': {}
+    'contact-info-widget': {},
+    'hero-widget': {}
   }
 });

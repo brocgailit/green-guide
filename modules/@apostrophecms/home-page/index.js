@@ -53,6 +53,7 @@ module.exports = {
         type: 'area',
         options: {
           widgets: {
+            hero: {},
             '@apostrophecms/rich-text': {
               toolbar: [
                 'styles',

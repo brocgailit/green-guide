@@ -20,7 +20,10 @@
           <div class="tour-card--content">
             <div class="tour-card--header">
               <h3>{{ tour.title }}</h3>
-              <span>From {{ apos.tour.formatPrice(tour)}}</span>
+              {% if tour.subtitle %}
+                <h4>{{ tour.subtitle }}</h4>
+              {% endif %}
+              <span class="tour-card--price">From {{ apos.tour.formatPrice(tour)}} per {{ tour.priceUnit if tour.priceUnit else 'person' }} </span>
             </div>
             <div class="tour-card--description">
               <p>

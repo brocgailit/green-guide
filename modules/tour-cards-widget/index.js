@@ -32,6 +32,7 @@ module.exports = {
           // Include only the information you need with a projection
           project: {
             title: 1,
+            subtitle: 1,
             price: 1,
             description: 1,
             xolaId: 1,

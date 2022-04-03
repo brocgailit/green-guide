@@ -40,11 +40,29 @@
   overflow: hidden;
   box-shadow: var(--gg-shadow-heavy);
 }
+.tour-card, 
+.tour-card--content,
+.tour-card--header {
+  display: flex;
+  flex-direction: column;
+}
+
+.tour-card--header {
+  line-height: 1;
+  gap: var(--gg-gap);
+
+  h4 {
+    font-family: var(--gg-font-heading);
+    color: var(--gg-color-grey-7);
+  }
+
+  .tour-card--price {
+    font-size: var(--gg-size-xs);
+  }
+}
 
 .tour-card, 
 .tour-card--content {
-  display: flex;
-  flex-direction: column;
   gap: var(--gg-gap-lg);
 }
 
@@ -53,7 +71,7 @@
 }
 
 .tour-card--content,
-.tour-card--description {
+.tour-card--content *:nth-last-child(2) {
   flex-grow: 1;
 }
 

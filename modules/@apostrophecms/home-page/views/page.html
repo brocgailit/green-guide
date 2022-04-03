@@ -52,16 +52,7 @@
 
 {% block main %}
 
-  {% if data.page.hero|length %}
 
-    {% set heroBackgroundObject = apos.attachment.first(data.page._heroBackground) %}
-    {% set heroBackground = apos.attachment.url(heroBackgroundObject, { size: 'max' }) %}
-
-    <section class="hero" style="--gg-hero-bg: url('{{ heroBackground }}')">
-      {% area data.page, 'hero' %}
-    </section>
-
-  {% endif %}
 
   <section>
     <div>

@@ -1,0 +1,11 @@
+{% set heroBackgroundObject = apos.attachment.first(data.page._heroBackground) %}
+{% set heroBackground = apos.attachment.url(heroBackgroundObject, { size: 'max' }) %}
+
+<section data-hero-widget class="hero" style="--gg-hero-bg: url('{{ heroBackground }}')">
+  <div>
+    <h3 style="color: var(--gg-color-{{ data.widget.subheadingColor }})">{{ data.widget.subheading }}</h3>
+    <h1 style="color: var(--gg-color-{{ data.widget.headingColor }})">{{ data.widget.heading }}</h1>
+    <h2 style="color: var(--gg-color-{{ data.widget.taglineColor }})">{{ data.widget.tagline }}</h2>
+  </div>
+  {% area data.widget, 'content' %}
+</section>

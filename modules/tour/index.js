@@ -17,6 +17,17 @@ module.exports = {
         label: 'Price',
         required: true
       },
+      priceUnit: {
+        type: 'string',
+        label: 'Price Unit',
+        help: 'i.e. Person, Group, Group of 11, etc.',
+        def: 'person'
+      },
+      subtitle: {
+        type: 'string',
+        label: 'Subtitle',
+        max: 150
+      },
       description: {
         type: 'string',
         label: 'Description',
@@ -62,7 +73,8 @@ module.exports = {
             label: {
               type: 'string',
               label: 'Label',
-              required: true
+              required: true,
+              max: 150
             }
           }
         }
@@ -71,7 +83,7 @@ module.exports = {
     group: {
       basics: {
         label: 'Basics',
-        fields: [ 'title', 'xolaId', 'price', 'description', '_images' ]
+        fields: [ 'title', 'subtitle', 'xolaId', 'price', 'priceUnit', 'description', 'features', '_images' ]
       },
       cta: {
         label: 'CTA',
