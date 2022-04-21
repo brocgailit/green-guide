@@ -36,6 +36,7 @@ module.exports = {
             price: 1,
             description: 1,
             xolaId: 1,
+            priceUnit: 1,
             _images: 1,
             ctaLabel: 1,
             ctaColor: 1,
